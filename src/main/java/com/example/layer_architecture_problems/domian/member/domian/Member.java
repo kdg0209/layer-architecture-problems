@@ -1,17 +1,21 @@
 package com.example.layer_architecture_problems.domian.member.domian;
 
+import com.example.layer_architecture_problems.domian.post.domain.Post;
 import io.hypersistence.utils.hibernate.id.Tsid;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.Comment;
 import org.springframework.util.StringUtils;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 
 @Getter
 @Entity
 @Table(name = "members")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@EqualsAndHashCode(of = "id")
 public class Member {
 
     private static final String PHONE_REGEX = "^\\d{3}-\\d{3,4}-\\d{4}$";
@@ -43,6 +47,9 @@ public class Member {
     @Comment(value = "사용자 연락처")
     @Column(name = "phone", length = 11, nullable = false)
     private String phone;
+
+    @OneToMany(mappedBy = "member")
+    private List<Post> posts = new ArrayList<>();
 
     @Builder
     public Member(String memberId, String password, String name, String email, String phone) {

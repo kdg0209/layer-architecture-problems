@@ -7,6 +7,7 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.processing.Generated;
 import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -30,6 +31,8 @@ public class QMember extends EntityPathBase<Member> {
     public final StringPath password = createString("password");
 
     public final StringPath phone = createString("phone");
+
+    public final ListPath<com.example.layer_architecture_problems.domian.post.domain.Post, com.example.layer_architecture_problems.domian.post.domain.QPost> posts = this.<com.example.layer_architecture_problems.domian.post.domain.Post, com.example.layer_architecture_problems.domian.post.domain.QPost>createList("posts", com.example.layer_architecture_problems.domian.post.domain.Post.class, com.example.layer_architecture_problems.domian.post.domain.QPost.class, PathInits.DIRECT2);
 
     public QMember(String variable) {
         super(Member.class, forVariable(variable));

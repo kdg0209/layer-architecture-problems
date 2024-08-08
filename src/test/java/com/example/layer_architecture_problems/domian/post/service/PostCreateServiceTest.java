@@ -1,9 +1,9 @@
 package com.example.layer_architecture_problems.domian.post.service;
 
 import com.example.layer_architecture_problems.domian.member.dao.MemberDao;
-import com.example.layer_architecture_problems.domian.member.domian.Member;
 import com.example.layer_architecture_problems.domian.post.dao.PostDao;
 import com.example.layer_architecture_problems.domian.post.dto.request.PostCreateRequest;
+import com.example.layer_architecture_problems.domian.post.testfixture.PostFixture;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -54,7 +54,7 @@ class PostCreateServiceTest {
         Long memberId = 1L;
 
         // mocking
-        when(memberDao.findById(memberId)).thenReturn(Optional.of(createMember()));
+        when(memberDao.findById(memberId)).thenReturn(Optional.of(PostFixture.createMember()));
 
         // when
         postCreateService.create(memberId, request);
@@ -63,15 +63,4 @@ class PostCreateServiceTest {
         verify(memberDao, times(1)).findById(anyLong());
         verify(postDao, times(1)).save(any());
     }
-
-    private static Member createMember() {
-        return Member.builder()
-                .memberId("yuiopasdfghjkllzxcvbnmqwertyuiopasdfghjklzdasdadas")
-                .password("123456")
-                .name("KDG")
-                .email("test@naver.com")
-                .phone("010-1234-5678")
-                .build();
-    }
-
 }

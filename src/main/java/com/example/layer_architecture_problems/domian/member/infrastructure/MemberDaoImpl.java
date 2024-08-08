@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
+import java.util.Optional;
+
 import static com.example.layer_architecture_problems.domian.member.domian.QMember.member;
 
 @Repository
@@ -31,6 +33,11 @@ class MemberDaoImpl implements MemberDao {
     @Override
     public Member save(Member member) {
         return this.repository.save(member);
+    }
+
+    @Override
+    public Optional<Member> findById(Long id) {
+        return this.repository.findById(id);
     }
 
     private BooleanExpression eqMemberId(String memberId) {

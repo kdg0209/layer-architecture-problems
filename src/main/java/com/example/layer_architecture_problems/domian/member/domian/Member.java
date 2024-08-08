@@ -19,6 +19,7 @@ public class Member {
     private static final Pattern EMAIL_PATTERN = Pattern.compile(EMAIL_REGEX);
     private static final Pattern PHONE_PATTERN = Pattern.compile(PHONE_REGEX);
 
+    @Id
     @Tsid
     @Comment(value = "id")
     private Long id;

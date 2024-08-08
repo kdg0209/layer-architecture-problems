@@ -47,6 +47,10 @@ public class Post {
         this.member = member;
     }
 
+    public void updateStatus(String status) {
+        this.status = PostStatus.findBy(status);
+    }
+
     private void verifyTitle(String title) {
         if (!StringUtils.hasText(title)) {
             throw new IllegalArgumentException("제목은 공백일 수 없습니다.");

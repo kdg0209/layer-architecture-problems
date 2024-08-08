@@ -2,8 +2,8 @@ package com.example.layer_architecture_problems.domian.member.controller;
 
 
 import com.epages.restdocs.apispec.ResourceSnippetParameters;
-import com.example.layer_architecture_problems.domian.member.dto.MemberCreateRequest;
-import com.example.layer_architecture_problems.domian.member.dto.MemberCreateResponse;
+import com.example.layer_architecture_problems.domian.member.dto.request.MemberCreateRequest;
+import com.example.layer_architecture_problems.domian.member.dto.response.MemberCreateResponse;
 import com.example.layer_architecture_problems.domian.member.service.MemberCreateService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;

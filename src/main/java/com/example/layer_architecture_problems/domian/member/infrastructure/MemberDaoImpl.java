@@ -1,6 +1,6 @@
-package com.example.layer_architecture_problems.domian.member.repository;
+package com.example.layer_architecture_problems.domian.member.infrastructure;
 
-import com.example.layer_architecture_problems.domian.member.service.port.MemberDao;
+import com.example.layer_architecture_problems.domian.member.dao.MemberDao;
 import com.example.layer_architecture_problems.domian.member.domian.Member;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;

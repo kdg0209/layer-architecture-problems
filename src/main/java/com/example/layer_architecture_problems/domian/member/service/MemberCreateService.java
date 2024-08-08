@@ -1,9 +1,9 @@
 package com.example.layer_architecture_problems.domian.member.service;
 
-import com.example.layer_architecture_problems.domian.member.service.port.MemberDao;
+import com.example.layer_architecture_problems.domian.member.dao.MemberDao;
 import com.example.layer_architecture_problems.domian.member.domian.Member;
-import com.example.layer_architecture_problems.domian.member.dto.MemberCreateRequest;
-import com.example.layer_architecture_problems.domian.member.dto.MemberCreateResponse;
+import com.example.layer_architecture_problems.domian.member.dto.request.MemberCreateRequest;
+import com.example.layer_architecture_problems.domian.member.dto.response.MemberCreateResponse;
 import com.example.layer_architecture_problems.domian.member.service.port.AlimTalkService;
 import com.example.layer_architecture_problems.domian.member.service.port.MailerService;
 import lombok.RequiredArgsConstructor;

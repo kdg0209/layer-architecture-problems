@@ -60,6 +60,7 @@ task docs {
 // restdocs-api-spec: OpenAPI 스펙 생성 설정 명시 end
 
 dependencies {
+	runtimeOnly 'com.h2database:h2'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
@@ -68,7 +69,7 @@ dependencies {
 	implementation 'io.hypersistence:hypersistence-utils-hibernate-60:3.5.1'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:4.1.0'
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:4.1.3'
 
 	implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
 	annotationProcessor 'com.querydsl:querydsl-apt:5.0.0:jakarta'

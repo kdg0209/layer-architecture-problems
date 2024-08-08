@@ -1,4 +1,4 @@
-package com.example.layer_architecture_problems.domian.member.dto;
+package com.example.layer_architecture_problems.domian.member.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 

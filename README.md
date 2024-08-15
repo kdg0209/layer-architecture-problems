@@ -244,6 +244,10 @@
 - 우선 예제 코드를 보면 Service에서는 xxxDao를 호출함으로써 특정 엔티티 레포지토리나 QueryDSL로 작성한 메서드에 접근할 수 있습니다.
 - Service에서 xxxRepository를 선언하여 간단한 메서드를 호출할 수도 있고, xxxRepository 인터페이스에 CustomXXX를 extends하여 CustomXXXImpl 클래스에서 CustomXXX를 구현하여 사용할 수도 있습니다.
 
+<img width="1032" alt="스크린샷 2024-08-15 오후 5 14 30" src="https://github.com/user-attachments/assets/a9b45b77-18d9-499e-a827-ab728841edef">
+
+<br>
+
 #### 위 질문사항에 대한 제 생각들은 이렇습니다.
 
 1. 서비스 레이어에서 특정 xxxRepository를 선언하여 메서드를 호출할 수 있지만 간단한 findById가 아니라 findByIdAndStatusFalse 이러한 메서드를 호출할 수도 있습니다. 이 메서드는 어떤 목적을 가지고, 왜 호출하는 것일까요? 저는 메서드명에는 목적이 내포되어 있어야하며, 메서드명으로 이러한 이유가 있구나라는 것을 도출할 수 있어야한다고 생각하는데 예시로 들었던 findByIdAndStatusFalse는 이러한 맥락을 파악하기에는 힘들다고 생각합니다.

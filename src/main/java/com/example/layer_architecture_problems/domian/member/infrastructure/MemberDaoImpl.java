@@ -4,6 +4,7 @@ import com.example.layer_architecture_problems.domian.member.dao.MemberDao;
 import com.example.layer_architecture_problems.domian.member.domian.Member;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
+import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
@@ -16,8 +17,8 @@ import static com.example.layer_architecture_problems.domian.member.domian.QMemb
 @RequiredArgsConstructor
 class MemberDaoImpl implements MemberDao {
 
+    private final EntityManager em;
     private final JPAQueryFactory queryFactory;
-    private final MemberRepository repository;
 
     @Override
     public boolean isDuplicatedMemberId(String memberId) {
@@ -32,12 +33,15 @@ class MemberDaoImpl implements MemberDao {
 
     @Override
     public Member save(Member member) {
-        return this.repository.save(member);
+        this.em.persist(member);
+        return member;
     }
 
     @Override
     public Optional<Member> findById(Long id) {
-        return this.repository.findById(id);
+        var result = this.em.find(Member.class, id);
+
+        return Optional.ofNullable(result);
     }
 
     private BooleanExpression eqMemberId(String memberId) {

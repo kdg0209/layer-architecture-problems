@@ -45,7 +45,7 @@ public class Member {
     private String email;
 
     @Comment(value = "사용자 연락처")
-    @Column(name = "phone", length = 11, nullable = false)
+    @Column(name = "phone", length = 13, nullable = false)
     private String phone;
 
     @OneToMany(mappedBy = "member")

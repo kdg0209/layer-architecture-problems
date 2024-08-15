@@ -17,8 +17,8 @@ public class PostCreateService {
     private final MemberDao memberDao;
     private final PostDao postDao;
 
-    public PostCreateResponse create(Long memberId, PostCreateRequest request) {
-        var member = memberDao.findById(memberId)
+    public PostCreateResponse create(PostCreateRequest request) {
+        var member = memberDao.findById(request.memberId())
                 .orElseThrow(IllegalStateException::new);
 
         var post = Post.builder()

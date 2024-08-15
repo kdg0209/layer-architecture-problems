@@ -19,6 +19,6 @@ public class MemberController {
 
     @PostMapping
     public MemberCreateResponse create(@Valid @RequestBody MemberCreateRequest request) {
-        return memberCreateService.create(request);
+        return memberCreateService.create(request.toCommand());
     }
 }

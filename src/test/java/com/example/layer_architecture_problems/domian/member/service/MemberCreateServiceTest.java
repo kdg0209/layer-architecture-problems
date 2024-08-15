@@ -39,7 +39,7 @@ class MemberCreateServiceTest {
         when(memberDao.isDuplicatedMemberId(anyString())).thenReturn(false);
 
         // when
-        memberCreateService.create(request);
+        memberCreateService.create(request.toCommand());
 
         // then
         verify(memberDao, times(1)).save(any());
@@ -57,7 +57,7 @@ class MemberCreateServiceTest {
         when(memberDao.isDuplicatedMemberId(anyString())).thenReturn(true);
 
         // when && then
-        assertThatThrownBy(() -> memberCreateService.create(request))
+        assertThatThrownBy(() -> memberCreateService.create(request.toCommand()))
                 .isInstanceOf(IllegalArgumentException.class);
 
         verify(memberDao, never()).save(any());
